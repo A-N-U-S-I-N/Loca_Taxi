@@ -46,52 +46,94 @@ app.post("/login_auto_driver", async (req, res) => {
 // Create a popup for user already exists message
 res.send(
     `<!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>User Exists</title>
-        <style>
-            body { font-family: Arial, sans-serif; }
-            .popup {
-                position: fixed;
-                left: 50%;
-                top: 50%;
-                transform: translate(-50%, -50%);
-                padding: 20px;
-                background-color: white;
-                border: 1px solid #ccc;
-                box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-                z-index: 1000;
-            }
-            .overlay {
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background-color: rgba(0, 0, 0, 0.5);
-                z-index: 999;
-            }
-            .close-btn {
-                margin-top: 10px;
-                padding: 5px 10px;
-                background-color: #007BFF;
-                color: white;
-                border: none;
-                cursor: pointer;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="overlay"></div>
-        <div class="popup">
-            <h2>User Already Exists</h2>
-            <p>Please choose a different phone number.</p>
-            <button class="close-btn" onclick="window.location.href='login.html';">Close</button>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Something Went Wrong</title>
+    <style>
+        * {
+            font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+        }
+
+        body {
+            margin: 0px;
+            background-color: #ccc;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            width: 100vw;
+        }
+
+        .pop-card {
+            height: 150px;
+            border: 1px solid green;
+            border-radius: 10px;
+            width: 280px;
+            background-color: #ffffff; 
+            padding: 20px 20px;
+            box-shadow: 5px 5px black;
+        }
+
+        .pop-card-top {
+            font-size: 24px;
+            font-weight: 600;
+        }
+
+        .pop-card-mid {
+            margin: 15px 0px;
+            font-size: 16px;
+            font-weight: 400;
+        }
+
+        .pop-card-bottom {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-start;
+        }
+
+        .pop-card-bt {
+            background-color:orange;   
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px 30px;
+            font-size: 14px;
+            margin-top: 15px;
+            border-radius: 5px;
+            color: #ffffff;
+            font-weight: 600;
+            border: 0px;
+            cursor: pointer;
+        }
+
+        .pop-card-bt:active {
+            transform: scale(98%);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="pop-card">
+        <div class="pop-card-top">
+            User Already Exists
         </div>
-    </body>
-    </html>`);    
+        <div class="pop-card-mid">
+            Please choose a different Phone Number
+        </div>
+        <div class="pop-card-bottom">
+            <button class="pop-card-bt" onclick="window.location.href='login.html';">
+                Try Again
+            </button>
+        </div>
+    </div>
+
+</body>
+
+</html>`);    
     }else {
 
         const userdata = await dbase.insertMany(data);
