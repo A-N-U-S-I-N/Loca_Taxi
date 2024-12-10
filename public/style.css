@@ -417,7 +417,7 @@ footer {
     background-color: #000000;
     color: white;
     border: 1px solid black;
-    border-radius: 100px;
+    border-radius: 0px 100px 100px 0px;
     height: 40px;
     display: flex;
     justify-content: center;
@@ -440,7 +440,7 @@ footer {
     background-color: #ffffff;
     color: #000000;
     border: 1px solid black;
-    border-radius: 100px;
+    border-radius: 0px 100px 100px 0px;
     display: flex;
     justify-content: center;
     align-items: center;
