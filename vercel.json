@@ -8,12 +8,12 @@
   ],
   "routes": [
     {
-      "src": "/(.*)",
-      "dest": "/public/$1" // Serve static files from the public directory
-    },
-    {
       "src": "/api/(.*)",
       "dest": "index.js" // Handle API requests with index.js
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/public/$1" // Serve static files from the public directory
     }
   ]
 }
