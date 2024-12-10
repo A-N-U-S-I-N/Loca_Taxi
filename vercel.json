@@ -9,11 +9,17 @@
   "routes": [
     {
       "src": "/api/(.*)",
-      "dest": "/index.js" // Handle API requests with index.js
+      "dest": "/index.js"
     },
     {
+      "src": "^/static/(.*)", // More specific route for static files
+      "dest": "/public/$1"
+    },
+    {
+      "handle": "miss", // Important for proper handling of unmatched routes
       "src": "/(.*)",
-      "dest": "/public/$1" // Serve static files from the public directory
+      "dest": "/index.js" // Fallback to index.js for client-side routing
     }
+
   ]
 }
