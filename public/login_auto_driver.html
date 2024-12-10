@@ -39,10 +39,17 @@
         </a>
     </div>
 
-    
+
     <div class="login-auto-driver-page">
+
+        <div class="dash-top-login">
+            <div class="dash-top-login-left">
+                Auto Owner
+            </div>
+            <!-- <div class="dash-top-login-right"> . </div> -->
+
+        </div>
         <form id="autoOwnerForm" class="login-auto-driver-form" action="/login_auto_driver" method="post">
-            <h2>Auto Owner</h2>
             <input type="hidden" id="auto_driver_form" name="auto_driver_form_default" value="auto_driver">
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" required placeholder="Enter your name">
@@ -52,25 +59,28 @@
 
             <label for="email">Email:</label>
             <input type="email" id="email" name="email" required placeholder="Enter your Email">
-
-            <label for="points">From:</label>
-            <select id="points" name="from" required>
-                <option value="" disabled selected>Select your zone</option>
-                <option value="jhalwa">Jhalwa</option>
-                <option value="civil_lines">Civil Lines</option>
-                <option value="dhoomanganj">Dhoomanganj</option>
-                <option value="station">Station</option>
-            </select>
-
-            <label for="points">To:</label>
-            <select id="points" name="to" required >
-                <option value="" disabled selected>Select your zone</option>
-                <option value="jhalwa">Jhalwa</option>
-                <option value="civil_lines">Civil Lines</option>
-                <option value="dhoomanganj">Dhoomanganj</option>
-                <option value="station">Station</option>
-            </select>
-
+            <div class="points-css">
+                <div>
+                <label for="points">From:</label>
+                <select id="points" name="from" required>
+                    <option value="" disabled selected>Select your zone</option>
+                    <option value="jhalwa">Jhalwa</option>
+                    <option value="civil_lines">Civil Lines</option>
+                    <option value="dhoomanganj">Dhoomanganj</option>
+                    <option value="station">Station</option>
+                </select>
+            </div>
+            <div>
+                <label for="points">To:</label>
+                <select id="points" name="to" required>
+                    <option value="" disabled selected>Select your zone</option>
+                    <option value="jhalwa">Jhalwa</option>
+                    <option value="civil_lines">Civil Lines</option>
+                    <option value="dhoomanganj">Dhoomanganj</option>
+                    <option value="station">Station</option>
+                </select>
+            </div>
+            </div>
             <label for="timing">Timing:</label>
             <input type="text" id="timing" name="timing" required
                 placeholder="Enter your working hours (e.g., 9 AM - 5 PM)">

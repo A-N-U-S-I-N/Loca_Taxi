@@ -37,8 +37,14 @@
     </div>
 
     <div class="login-gateway-page">
+        <div class="dash-top-login">
+            <div class="dash-top-login-left">
+               Choose Your Role 
+            </div> 
+            <!-- <div class="dash-top-login-right"> . </div> -->
+
+        </div>
         <form id="roleForm" class="login-gateway-form" onsubmit="return handleFormSubmit(event)">
-            <label for="role">Choose your role:</label> <!-- Removed extra space in 'for' attribute -->
             <select id="role" name="role" required>
                 <option value="" disabled selected>Select</option>
                 <option value="auto_driver">Auto Driver</option>

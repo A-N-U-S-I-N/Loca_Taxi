@@ -273,11 +273,22 @@ i {
 }
 
 
+.test-token-top-left {
+    height: 40px;
+    width: 40px;
+    border-radius: 100%;
+    border: 0.5px solid #d1d1d1;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .test-token-top-left-img {
     height: 40px;
     width: 40px;
     border-radius: 100%;
-    border: 1px solid green;
+    padding: 6px 4px;
 }
 
 .route {
@@ -445,7 +456,6 @@ footer {
 
 .login-gateway-form select {
     width: 100%;
-    margin-top: 20px;
     height: 30px;
     text-align: center;
     border-radius: 5px;
@@ -464,8 +474,8 @@ footer {
     height: 30px;
     text-align: center;
     font-weight: 600;
-    background-color: var(--text);
-    color: #d6d6d6;
+    background-color: green; 
+    color: #ffffff;
     border-radius: 5px;
     border: 0px;
 }
@@ -475,6 +485,17 @@ footer {
 
 /* Login-Auto-Driver CSS */
 
+
+.points-css {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.points-css select {
+    margin-top: 5px;
+}
 
 .login-auto-driver-page {
     padding-top: 8vh;
@@ -528,8 +549,8 @@ footer {
     height: 30px;
     text-align: center;
     font-weight: 700;
-    background-color: var(--text);
-    color: #d6d6d6;
+    background-color: green;
+    color: #ffffff; 
     border-radius: 5px;
     border: 0px;
 }
@@ -603,8 +624,8 @@ footer {
     height: 30px;
     text-align: center;
     font-weight: 700;
-    background-color: var(--text);
-    color: #d6d6d6;
+    background-color: green;
+    color: #ffffff; 
     border-radius: 5px;
     border: 0px;
 }
@@ -675,14 +696,21 @@ footer {
 }
 
 .dash-top {
-
     display: flex;
     justify-content: space-between;
     width: 60%;
     padding: 0px 40px;
 }
 
-.dash-top-left {
+.dash-top-login {
+    display: flex;
+    justify-content: space-between;
+    width: 25%;
+    padding: 0px 40px;
+}
+
+.dash-top-left,
+.dash-top-login-left {
     height: 30px;
     display: flex;
     align-items: center;
@@ -693,9 +721,11 @@ footer {
     border-right: 2px solid black;
     border-radius: 5px 5px 0px 0px;
     font-weight: 600;
+    background-color: orange;
 }
 
-.dash-top-right {
+.dash-top-right,
+.dash-top-login-right {
     display: flex;
     align-items: last baseline;
     justify-content: center;
@@ -716,7 +746,7 @@ footer {
     max-height: 80vh;
     background-color: #ffffff;
     overflow: hidden;
-} 
+}
 
 
 .dashboard-form {
@@ -769,8 +799,8 @@ footer {
     height: 30px;
     text-align: center;
     font-weight: 700;
-    background-color: var(--text);
-    color: #d6d6d6;
+    background-color: green;
+    color: #ffffff;
     border-radius: 5px;
     border: 0px;
 }
@@ -801,6 +831,7 @@ footer {
 .dashboard-form h2 {
     margin: 0px 0px;
     align-self: start;
+    width: 50%;
 }
 
 button:active {
@@ -848,6 +879,13 @@ li {
 
 }
 
+.scroll{
+    display: flex;
+    width: 100%;
+    max-height: 60vh;
+    justify-content: center;
+}
+
 
 @media (max-width: 768px) {
 
@@ -883,7 +921,8 @@ li {
     .login-rider-form,
     .register-bt,
     .dashboard-form,
-    .dash-top {
+    .dash-top,
+    .dash-top-login {
         width: 80%;
     }
 
@@ -933,4 +972,7 @@ li {
         width: 100%;
     }
 
+    .auto-img {
+        left: 25%;
+    }
 }
