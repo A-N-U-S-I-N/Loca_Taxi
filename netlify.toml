@@ -1,0 +1,22 @@
+[build]
+  command = "npm run build" # Or your build command
+  publish = "public" # Or the directory where your built files are
+
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/index" # Assuming your function is named index.js
+  status = 200
+
+[[redirects]]
+  from = "/static/*" # Or adjust to where your static files are
+  to = "/public/static/:splat" # :splat preserves the rest of the path
+  status = 200
+
+[[redirects]] # Catch-all for client-side routing
+  from = "/*"
+  to = "/index.html" # Your main HTML file
+  status = 200
+
+[[functions]]
+  node_bundler = "esbuild" # Or another bundler if preferred
+  directory = "functions" # Assuming API code is in this folder.  Create this directory if not present.
