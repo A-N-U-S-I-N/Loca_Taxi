@@ -10,6 +10,10 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 a {
     text-decoration: none;
 }
@@ -425,6 +429,34 @@ footer {
 }
 
 
+.nav-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav-button-app {
+    background-color: #ffffff;
+    color: #000000;
+    border: 1px solid black;
+    border-radius: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 14px;
+    font-size: 14px;
+    margin-left: 30px;
+    margin-top: 10px;
+    font-weight: bold;
+
+    i {
+        font-size: 17px;
+    }
+}
+
+
+
 /* Login-Gateway CSS */
 
 
@@ -474,7 +506,7 @@ footer {
     height: 30px;
     text-align: center;
     font-weight: 600;
-    background-color: green; 
+    background-color: green;
     color: #ffffff;
     border-radius: 5px;
     border: 0px;
@@ -491,10 +523,15 @@ footer {
     justify-content: space-between;
     gap: 10px;
     margin-top: 10px;
+    width: 100%;
 }
 
 .points-css select {
     margin-top: 5px;
+}
+
+.points-css div {
+    width: 50%;
 }
 
 .login-auto-driver-page {
@@ -550,7 +587,7 @@ footer {
     text-align: center;
     font-weight: 700;
     background-color: green;
-    color: #ffffff; 
+    color: #ffffff;
     border-radius: 5px;
     border: 0px;
 }
@@ -625,7 +662,7 @@ footer {
     text-align: center;
     font-weight: 700;
     background-color: green;
-    color: #ffffff; 
+    color: #ffffff;
     border-radius: 5px;
     border: 0px;
 }
@@ -722,6 +759,7 @@ footer {
     border-radius: 5px 5px 0px 0px;
     font-weight: 600;
     background-color: orange;
+    overflow: auto;
 }
 
 .dash-top-right,
@@ -729,7 +767,7 @@ footer {
     display: flex;
     align-items: last baseline;
     justify-content: center;
-
+    overflow: auto;
 }
 
 
@@ -841,7 +879,7 @@ button:active {
 .hr {
     height: 2px;
     background-color: #000000;
-    width: 80vw;
+    width: 90vw;
     display: flex;
 }
 
@@ -879,13 +917,28 @@ li {
 
 }
 
-.scroll{
+.scroll {
     display: flex;
     width: 100%;
     max-height: 60vh;
     justify-content: center;
 }
 
+#home {
+    scroll-margin-top: 10vh;
+}
+
+#mid-line {
+    scroll-margin-top: 15vh;
+}
+
+#map {
+    scroll-margin-top: 8vh;
+}
+
+#test {
+    scroll-margin-top: 30vh;
+}
 
 @media (max-width: 768px) {
 
@@ -923,7 +976,7 @@ li {
     .dashboard-form,
     .dash-top,
     .dash-top-login {
-        width: 80%;
+        width: 90%;
     }
 
     .bg-img {
@@ -964,7 +1017,7 @@ li {
     }
 
     .dashboard-form-main {
-        width: 80%;
+        width: 90%;
         max-height: 80vh;
     }
 
