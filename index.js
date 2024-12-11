@@ -125,7 +125,7 @@ res.send(
             Please choose a different Phone Number
         </div>
         <div class="pop-card-bottom">
-            <button class="pop-card-bt" onclick="window.location.href='login.html';">
+            <button class="pop-card-bt" onclick="window.location.href='login_auto_driver.html';">
                 Try Again
             </button>
         </div>
@@ -161,8 +161,96 @@ app.post("/login_rider", async (req, res) => {
 
     const existingUser = await dbase.findOne({phoneNumber: data.phoneNumber});
     if(existingUser) {
-        res.send("User already exists. Please choose a different username."); //create a popup
-    }else {
+        res.send(
+            `<!DOCTYPE html>
+        <html lang="en">
+        
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Something Went Wrong</title>
+            <style>
+                * {
+                    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+                }
+        
+                body {
+                    margin: 0px;
+                    background-color: #ccc;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    height: 100vh;
+                    width: 100vw;
+                }
+        
+                .pop-card {
+                    height: 150px;
+                    border: 1px solid green;
+                    border-radius: 10px;
+                    width: 280px;
+                    background-color: #ffffff; 
+                    padding: 20px 20px;
+                    box-shadow: 5px 5px black;
+                }
+        
+                .pop-card-top {
+                    font-size: 24px;
+                    font-weight: 600;
+                }
+        
+                .pop-card-mid {
+                    margin: 15px 0px;
+                    font-size: 16px;
+                    font-weight: 400;
+                }
+        
+                .pop-card-bottom {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: flex-start;
+                }
+        
+                .pop-card-bt {
+                    background-color:orange;   
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    padding: 10px 30px;
+                    font-size: 14px;
+                    margin-top: 15px;
+                    border-radius: 5px;
+                    color: #ffffff;
+                    font-weight: 600;
+                    border: 0px;
+                    cursor: pointer;
+                }
+        
+                .pop-card-bt:active {
+                    transform: scale(98%);
+                }
+            </style>
+        </head>
+        
+        <body>
+            <div class="pop-card">
+                <div class="pop-card-top">
+                    User Already Exists
+                </div>
+                <div class="pop-card-mid">
+                    Please choose a different Phone Number
+                </div>
+                <div class="pop-card-bottom">
+                    <button class="pop-card-bt" onclick="window.location.href='login_rider.html';">
+                        Try Again
+                    </button>
+                </div>
+            </div>
+        
+        </body>
+        
+        </html>`);    }else {
 
         const userdata = await dbase.insertMany(data);
         console.log(userdata);
@@ -179,9 +267,7 @@ app.post("/login_rider", async (req, res) => {
 app.post("/login", async (req, res) => {
     try{
         const check = await dbase.findOne({phoneNumber: req.body.phone});
-        if(!check) {
-            res.send("user name cannot found");
-        }
+        
 
         if(req.body.password === check.password) {
 
@@ -198,11 +284,187 @@ app.post("/login", async (req, res) => {
             }
             
         }else {
-            req.send("wrong password"); //popup
-        }
+            res.send(
+                `<!DOCTYPE html>
+            <html lang="en">
+            
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>Something Went Wrong</title>
+                <style>
+                    * {
+                        font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+                    }
+            
+                    body {
+                        margin: 0px;
+                        background-color: #ccc;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        height: 100vh;
+                        width: 100vw;
+                    }
+            
+                    .pop-card {
+                        height: 150px;
+                        border: 1px solid green;
+                        border-radius: 10px;
+                        width: 280px;
+                        background-color: #ffffff; 
+                        padding: 20px 20px;
+                        box-shadow: 5px 5px black;
+                    }
+            
+                    .pop-card-top {
+                        font-size: 24px;
+                        font-weight: 600;
+                    }
+            
+                    .pop-card-mid {
+                        margin: 15px 0px;
+                        font-size: 16px;
+                        font-weight: 400;
+                    }
+            
+                    .pop-card-bottom {
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        justify-content: flex-start;
+                    }
+            
+                    .pop-card-bt {
+                        background-color:orange;   
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        padding: 10px 30px;
+                        font-size: 14px;
+                        margin-top: 15px;
+                        border-radius: 5px;
+                        color: #ffffff;
+                        font-weight: 600;
+                        border: 0px;
+                        cursor: pointer;
+                    }
+            
+                    .pop-card-bt:active {
+                        transform: scale(98%);
+                    }
+                </style>
+            </head>
+            
+            <body>
+                <div class="pop-card">
+                    <div class="pop-card-top">
+                        Login Error
+                    </div>
+                    <div class="pop-card-mid">
+                        Oops! It looks like the password you entered is incorrect.
+                    </div>
+                    <div class="pop-card-bottom">
+                        <button class="pop-card-bt" onclick="window.location.href='login.html';">
+                            Try Again
+                        </button>
+                    </div>
+                </div>
+            
+            </body>
+            
+            </html>`);        }
     }catch{
-        res.send("Wrong Details"); //popup
-    }
+        res.send(
+            `<!DOCTYPE html>
+        <html lang="en">
+        
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Something Went Wrong</title>
+            <style>
+                * {
+                    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+                }
+        
+                body {
+                    margin: 0px;
+                    background-color: #ccc;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    height: 100vh;
+                    width: 100vw;
+                }
+        
+                .pop-card {
+                    height: 190px;
+                    border: 1px solid green;
+                    border-radius: 10px;
+                    width: 280px;
+                    background-color: #ffffff; 
+                    padding: 20px 20px;
+                    box-shadow: 5px 5px black;
+                }
+        
+                .pop-card-top {
+                    font-size: 24px;
+                    font-weight: 600;
+                }
+        
+                .pop-card-mid {
+                    margin: 15px 0px;
+                    font-size: 16px;
+                    font-weight: 400;
+                }
+        
+                .pop-card-bottom {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: flex-start;
+                }
+        
+                .pop-card-bt {
+                    background-color:orange;   
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    padding: 10px 30px;
+                    font-size: 14px;
+                    margin-top: 15px;
+                    border-radius: 5px;
+                    color: #ffffff;
+                    font-weight: 600;
+                    border: 0px;
+                    cursor: pointer;
+                }
+        
+                .pop-card-bt:active {
+                    transform: scale(98%);
+                }
+            </style>
+        </head>
+        
+        <body>
+            <div class="pop-card">
+                <div class="pop-card-top">
+                    Login Error
+                </div>
+                <div class="pop-card-mid">
+                    Oops! It looks like the phone number or password you entered is incorrect. Please double-check your details and try again.
+                </div>
+                <div class="pop-card-bottom">
+                    <button class="pop-card-bt" onclick="window.location.href='login.html';">
+                        Try Again
+                    </button>
+                </div>
+            </div>
+        
+        </body>
+        
+        </html>`);    }
 });
 
 app.get('/auto_driver_main', (req, res) => {
@@ -228,10 +490,7 @@ app.post('/main_auto_driver', async (req, res) => {
     const phoneNumber = req.session.user?.phoneNumber;
 
     try {
-        if (!phoneNumber) {
-            return res.status(401).json({ message: 'User not authenticated' });
-            res.sendFile(__dirname + '/public/login.html');
-        }
+        
         const result = await dbase.findOneAndUpdate(
             { phoneNumber: phoneNumber }, // Query to find the user
             { status: status },           // Update operation
@@ -273,6 +532,21 @@ app.post('/search-drivers', async (req, res) => {
     } catch (error) {
         console.error("Error searching drivers:", error);
         res.status(500).json({ message: 'Internal server error' });
+    }
+});
+
+app.get('/dashboard', async (req, res) => {
+    if (req.session.user) {
+        const userinfo = await dbase.findOne({phoneNumber: req.session.user?.phoneNumber});
+
+        if (userinfo.title === 'auto_driver') {
+            res.sendFile(path.join(__dirname, 'public', 'auto_driver_main.html'));
+        } else {
+            res.sendFile(path.join(__dirname, 'public', 'rider_main.html'));
+        }
+        
+    } else {
+        res.sendFile(__dirname + '/public/login.html');
     }
 });
 
