@@ -699,9 +699,9 @@ footer {
 /* Dashboard CSS */
 
 .bg-img {
-    width: 200px;
+    width: 100px;
     position: fixed;
-    bottom: -35px;
+    bottom: -20px;
     right: -60px;
     z-index: -1;
     animation: bg-slide 20s ease-in-out infinite;
@@ -981,7 +981,7 @@ li {
 
     .bg-img {
         width: 100px;
-        bottom: -35px;
+        bottom: -20px;
         right: -70px;
         animation: bg-slide 15s ease-in-out infinite;
     }
