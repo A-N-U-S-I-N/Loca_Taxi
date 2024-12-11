@@ -980,7 +980,7 @@ li {
     }
 
     .bg-img {
-        width: 200px;
+        width: 100px;
         bottom: -35px;
         right: -70px;
         animation: bg-slide 15s ease-in-out infinite;
