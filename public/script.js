@@ -117,7 +117,7 @@ document.getElementById('searchForm').addEventListener('submit', async (event) =
         if (results.length > 0) {
             results.forEach(driver => {
                 const li = document.createElement('li');
-                li.innerHTML = `<p><b>Name :</b> ${driver.name} <br><b>Auto-No. :</b> ${driver.autono} <br><b>Phone Number :</b> ${driver.phoneNumber} <br><b>Timing :</b> ${driver.timing} <br><b>Status :</b> ${driver.status}</p>`;
+                li.innerHTML = `<p><b>Name :</b> ${driver.name} <br><b>Auto-No. :</b> ${driver.autono} <br><b>Phone Number :</b> <a href="tel:${driver.phoneNumber}"> +91 ${driver.phoneNumber} </a> <br><b>Timing :</b> ${driver.timing} <br><b>Status :</b> ${driver.status}</p>`;
                 resultsList.appendChild(li);
             });
         } else {
