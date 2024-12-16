@@ -550,6 +550,36 @@ app.get('/dashboard', async (req, res) => {
     }
 });
 
+app.get('/delete_user', async (req, res) => {
+    const userName = req.session.user?.name; 
+
+    if (!userName) {
+        console.log({ message: 'User not authenticated' });
+        return res.status(401).sendFile(__dirname + '/public/login.html'); 
+    }
+
+    try {
+        const result = await dbase.findOneAndDelete({ name: userName }); 
+
+        if (result) {
+            console.log({ message: 'User deleted successfully', user: result });
+            res.sendFile(__dirname + '/public/login.html');
+        } else {
+            console.log({ message: 'User not found' });
+            res.sendFile(__dirname + '/public/login.html');
+        }
+    } catch (error) {
+        console.error("Error deleting user:", error);
+        res.status(500).json({ message: 'Internal server error' });
+    }
+});
+
+app.get('/user-status', async (req, res) => {
+    const check = await dbase.findOne({name: req.session.user?.name});
+    const userStatus = check.status;
+    res.json({ status: userStatus});
+});
+
 app.get('/logout', (req, res) => {
     req.session.destroy(err => {
         if (err) {
