@@ -883,6 +883,13 @@ button:active {
     display: flex;
 }
 
+.hr-update{
+    height: 2px;
+    background-color: #000000;
+    width: 25vw; 
+    display: flex;
+}
+
 ul {
     padding: 10px 15px;
     padding-bottom: 15px;
@@ -1057,5 +1064,9 @@ li {
 
     .auto-img {
         left: 25%;
+    }
+    
+    .hr-update{
+        width: 90vw;
     }
 }
