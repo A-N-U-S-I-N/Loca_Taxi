@@ -127,11 +127,3 @@ document.getElementById('searchForm').addEventListener('submit', async (event) =
         console.error('Error fetching drivers:', error);
     }
 });
-
-fetch('/user-status')
-        .then(response => response.json())
-        .then(data => {
-            const username = data.status;
-            document.getElementById('current-status').innerText = username;
-
-        });
