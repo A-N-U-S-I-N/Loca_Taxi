@@ -68,7 +68,17 @@
         </form>
       
     </div>
+    <script>
 
+        fetch('/user-status')
+        .then(response => response.json())
+        .then(data => {
+            const username = data.status;
+            document.getElementById('current-status').innerText = username;
+
+        })
+        
+    </script>
 </body>
 
 </html>
