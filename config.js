@@ -25,7 +25,8 @@ const LoginSchema = new mongoose.Schema({
     },
     status: {
         type: String,
-        enum: ['Active', 'Inactive']
+        enum: ['Active', 'Inactive'],
+        default: 'Inactive'
     },
     points: {
         type: [String], 
