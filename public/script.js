@@ -128,3 +128,10 @@ document.getElementById('searchForm').addEventListener('submit', async (event) =
     }
 });
 
+fetch('/user-status')
+        .then(response => response.json())
+        .then(data => {
+            const username = data.status;
+            document.getElementById('current-status').innerText = username;
+
+        });
